@@ -4,8 +4,80 @@
   <meta charset="UTF-8">
   <title>Support & Help Center</title>
   <link rel="stylesheet" href="support.css"/>
+  <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
+  <nav class="navbar">
+  <div class="navbar-inner">
+    <div class="navbar-row">
+      <!-- Logo -->
+      <a href="/" class="navbar-logo">
+        <!-- Shield icon -->
+        <svg width="28" height="28" fill="none" stroke="#2336a3" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"/></svg>
+        <span>DBT Portal</span>
+      </a>
+      <!-- Desktop Links -->
+      <div class="navbar-links">
+        <a href="/" class="navbar-link active">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-linecap="round" stroke-width="2"><path d="M3 12l2-2m0 0V7.5A2.5 2.5 0 017.5 5h9A2.5 2.5 0 0119 7.5V10m-14 0l7 7 7-7"/></svg>
+          Home
+        </a>
+        <a href="/apply" class="navbar-link">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="8" x2="16" y2="8"/></svg>
+          Apply
+        </a>
+        <a href="/track" class="navbar-link">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Track
+        </a>
+        <a href="/grievance" class="navbar-link">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Grievance
+        </a>
+        <a href="/dashboard" class="navbar-link">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          Dashboard
+        </a>
+        <a href="/support" class="navbar-link">
+          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/></svg>
+          Support
+        </a>
+      </div>
+      <!-- Desktop CTA -->
+      <a href="/apply" class="btn-cta">Get Started</a>
+      <!-- Mobile Hamburger -->
+      <button class="toggle-btn" onclick="document.getElementById('nav-mobile').classList.toggle('open');">
+        <!-- Hamburger -->
+        <svg id="hamburger" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+    <!-- Mobile Nav -->
+    <div class="navbar-mobile" id="nav-mobile">
+      <div class="navbar-mobile-links">
+        <a href="/" class="navbar-link active">Home</a>
+        <a href="/apply" class="navbar-link">Apply</a>
+        <a href="/track" class="navbar-link">Track</a>
+        <a href="/grievance" class="navbar-link">Grievance</a>
+        <a href="/dashboard" class="navbar-link">Dashboard</a>
+        <a href="/support" class="navbar-link">Support</a>
+      </div>
+      <div class="navbar-mobile-cta">
+        <a href="/apply" class="btn-cta" style="width:100%;">Get Started</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Mobile nav toggle: make hamburger toggle show/hide mobile menu
+    document.querySelector('.toggle-btn').addEventListener('click', function(){
+      document.getElementById('nav-mobile').classList.toggle('open');
+      if(document.getElementById('nav-mobile').classList.contains('open'))
+        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'; // X
+      else
+        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>'; // menu
+    });
+  </script>
+</nav>
+
 <div class="container">
   <div class="text-center mb-12">
     <h1 style="font-size:2.3rem;margin-bottom:1.1rem;font-weight:800;">Support & Help Center</h1>
