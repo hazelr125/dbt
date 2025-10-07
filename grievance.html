@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Grievance Redressal</title>
+  <link rel="stylesheet" href="grievance.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Grievance Redressal</h1>
+      <p class="description">
+        Submit your complaints or track existing grievances. We ensure timely resolution and transparent communication.
+      </p>
+    </header>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist" aria-label="Grievance Redressal Tabs">
+      <button role="tab" aria-selected="true" aria-controls="tab-new" id="tab-new-btn" tabindex="0" class="tab-button active">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Submit New Grievance
+      </button>
+      <button role="tab" aria-selected="false" aria-controls="tab-track" id="tab-track-btn" tabindex="-1" class="tab-button">
+        <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Track Grievances
+      </button>
+    </div>
+
+    <!-- Tab Panels -->
+    <section id="tab-new" role="tabpanel" aria-labelledby="tab-new-btn" tabindex="0">
+      <div class="card">
+        <header>
+          <h2 style="display:flex; align-items:center; gap:0.5rem; font-weight:700;">
+            <svg aria-hidden="true" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="24" width="24"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Submit Your Grievance
+          </h2>
+          <p style="color:#6b7280;">Provide detailed information about your complaint. We aim to respond within 3-5 working days.</p>
+        </header>
+
+        <form id="grievanceForm" style="margin-top:1.5rem;">
+          <div class="grid-2">
+            <div>
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name" required />
+            </div>
+            <div>
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <label for="mobile">Mobile Number *</label>
+              <input type="tel" id="mobile" name="mobile" placeholder="+91 XXXXX-XXXXX" pattern="^\+?\d{10,15}$" title="10 to 15 digit number with optional +" required />
+            </div>
+            <div>
+              <label for="trackingId">Application Tracking ID (if applicable)</label>
+              <input type="text" id="trackingId" name="trackingId" placeholder="DBT2025XXXXXX" />
+            </div>
+          </div>
+
+          <div>
+            <label for="category">Grievance Category *</label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>Select category</option>
+              <option>Processing Delay</option>
+              <option>Technical Issue</option>
+              <option>Document Verification</option>
+              <option>Payment Related</option>
+              <option>Application Status</option>
+              <option>Portal Access</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="subject">Subject *</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Brief description of your grievance"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="description">Detailed Description *</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Provide complete details of your complaint including dates, reference numbers, and any other relevant information"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+
+          <div class="notification" role="alert">
+            <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12" y2="16"></line>
+            </svg>
+            You will receive a grievance ID via SMS and email. Use this ID to track the status of your complaint.
+          </div>
+
+          <button type="submit" class="button" aria-label="Submit Grievance">
+            <svg aria-hidden="true" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="20" width="20">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            Submit Grievance
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section id="tab-track" role="tabpanel" aria-labelledby="tab-track-btn" tabindex="0" hidden>
+      <div class="card">
+        <header>
+          <h2>Your Grievances</h2>
+          <p style="color:#6b7280;">View and track all your submitted grievances</p>
+        </header>
+        <div class="grievance-list" id="grievanceList" style="margin-top:1rem;"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Data
+    const grievances = [
+      {
+        id: "GRV2025001",
+        subject: "Delay in Document Verification",
+        category: "Processing Delay",
+        status: "Under Investigation",
+        submittedDate: "2025-03-18",
+        lastUpdate: "2025-03-22",
+        response:
+          "Your grievance is being reviewed by our team. We will update you within 2 working days."
+      },
+      {
+        id: "GRV2025002",
+        subject: "Unable to Upload Documents",
+        category: "Technical Issue",
+        status: "Resolved",
+        submittedDate: "2025-03-10",
+        lastUpdate: "2025-03-15",
+        response: "The technical issue has been fixed. Please try uploading your documents again."
+      }
+    ];
+
+    // Tab functionality
+    const newBtn = document.getElementById("tab-new-btn");
+    const trackBtn = document.getElementById("tab-track-btn");
+    const newTab = document.getElementById("tab-new");
+    const trackTab = document.getElementById("tab-track");
+
+    newBtn.addEventListener("click", () => {
+      newBtn.classList.add("active");
+      newBtn.setAttribute("aria-selected", "true");
+      newBtn.tabIndex = 0;
+
+      trackBtn.classList.remove("active");
+      trackBtn.setAttribute("aria-selected", "false");
+      trackBtn.tabIndex = -1;
+
+      newTab.hidden = false;
+      trackTab.hidden = true;
+    });
+
+    trackBtn.addEventListener("click", () => {
+      trackBtn.classList.add("active");
+      trackBtn.setAttribute("aria-selected", "true");
+      trackBtn.tabIndex = 0;
+
+      newBtn.classList.remove("active");
+      newBtn.setAttribute("aria-selected", "false");
+      newBtn.tabIndex = -1;
+
+      trackTab.hidden = false;
+      newTab.hidden = true;
+
+      renderGrievances();
+    });
+
+    // Render grievances list
+    function getStatusClasses(status) {
+      switch(status) {
+        case "Resolved": return "badge bg-secondary";
+        case "Under Investigation": return "badge bg-primary";
+        default: return "badge bg-muted";
+      }
+    }
+
+    function renderGrievances() {
+      const container = document.getElementById("grievanceList");
+      container.innerHTML = "";
+
+      if(grievances.length === 0) {
+        container.innerHTML = `<p style="text-align:center; color:#6b7280; padding:2rem;">
+          <svg aria-hidden="true" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" height="48" width="48" style="margin: 0 auto 1rem; display:block;">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          No grievances found
+        </p>`;
+        return;
+      }
+
+      grievances.forEach(g => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+          <div class="grievance-header">
+            <div>
+              <h3 class="grievance-title">${g.subject}</h3>
+              <div class="grievance-meta">
+                <span>ID: ${g.id}</span>
+                <span>${g.category}</span>
+              </div>
+            </div>
+            <span class="${getStatusClasses(g.status)}">${g.status}</span>
+          </div>
+          <div class="grievance-dates">
+            <div>
+              <p>Submitted On</p>
+              <p class="date-value">${new Date(g.submittedDate).toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric'})}</p>
+            </div>
+            <div>
+              <p>Last Updated</p>
+              <p class="date-value">${new Date(g.lastUpdate).toLocaleDateString('en-IN', { year:'numeric', month:'long', day:'numeric'})}</p>
+            </div>
+          </div>
+          <div class="grievance-response">
+            ${g.status === "Resolved" ? 
+            `<svg aria-hidden="true" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>` :
+            `<svg aria-hidden="true" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`
+            }
+            <div>
+              <p style="font-weight:600; margin:0 0 0.25rem;">Latest Update</p>
+              <p style="margin:0; color:#6b7280;">${g.response}</p>
+            </div>
+          </div>
+          <div class="grievance-actions">
+            <button class="button outline" aria-label="View details of ${g.subject}">View Details</button>
+            <button class="button" aria-label="Add comment for ${g.subject}">Add Comment</button>
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // Form submit feedback
+    const form = document.getElementById("grievanceForm");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      alert("Grievance submitted successfully! You will receive updates via SMS and email.");
+      form.reset();
+    });
+  </script>
+</body>
+
+</html>

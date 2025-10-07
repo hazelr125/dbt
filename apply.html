@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apply for Relief / Incentive</title>
+  <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+<div class="container">
+  <div class="progress" id="progressSteps"></div>
+  <div class="progress-labels">
+    <span id="lbl-step-1">Personal Details</span>
+    <span id="lbl-step-2">Case Info</span>
+    <span id="lbl-step-3">Bank Details</span>
+  </div>
+
+  <h2>Apply for Relief / Incentive</h2>
+  <div class="desc">Fill in the required information to submit your application for benefits under PCR/PoA Acts.</div>
+
+  <form id="applyForm" autocomplete="off">
+    <!-- Step 1 -->
+    <div id="step-1" class="form-step">
+      <div class="row two">
+        <div>
+          <label for="aadhaar">Aadhaar Number *</label>
+          <input required name="aadhaar" id="aadhaar" pattern="[0-9]{12}" maxlength="12">
+        </div>
+        <div>
+          <label for="mobile">Mobile Number *</label>
+          <input required name="mobile" id="mobile" pattern="[0-9]{10}" maxlength="10">
+        </div>
+      </div>
+      <label for="name">Full Name *</label>
+      <input required name="name" id="name">
+      <label for="email">Email Address</label>
+      <input name="email" id="email" type="email">
+      <label for="address">Address *</label>
+      <textarea required name="address" id="address"></textarea>
+      <div class="row two">
+        <div>
+          <label for="state">State *</label>
+          <select id="state" name="state" required></select>
+        </div>
+        <div>
+          <label for="district">District *</label>
+          <input required name="district" id="district">
+        </div>
+      </div>
+      <div class="alert">
+        <span style="font-size:18px;">&#9888;</span>
+        Your Aadhaar will be verified through eKYC. Ensure your mobile is linked.
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div id="step-2" class="form-step" style="display:none;">
+      <label for="reliefType">Type of Relief/Incentive *</label>
+      <select id="reliefType" name="reliefType" required></select>
+      <div class="row two">
+        <div>
+          <label for="incidentDate">Date of Incident *</label>
+          <input type="date" name="incidentDate" id="incidentDate" required>
+        </div>
+        <div>
+          <label for="firNumber">FIR Number</label>
+          <input name="firNumber" id="firNumber">
+        </div>
+      </div>
+      <label for="description">Description of Incident *</label>
+      <textarea required name="description" id="description"></textarea>
+      <label>Upload Documents</label>
+      <div class="file-upload" onclick="document.getElementById('docs').click();">
+        <div style="font-size:2em; margin-bottom:4px;">&#8682;</div>
+        <span>Click or drag files (Max 10MB each)</span>
+        <input id="docs" name="docs" type="file" multiple style="display:none;">
+      </div>
+      <div class="alert">
+        <span style="font-size:18px;">&#9888;</span>
+        Documents will be verified through DigiLocker and eCourts integration.
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div id="step-3" class="form-step" style="display:none;">
+      <label for="bankAccount">Bank Account Number *</label>
+      <input required name="bankAccount" id="bankAccount">
+      <label for="ifscCode">IFSC Code *</label>
+      <input required name="ifscCode" id="ifscCode">
+      <div class="checkbox-row">
+        <input type="checkbox" required id="terms">
+        <label for="terms">
+          I declare all information is true and understand providing false information is punishable.
+        </label>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" required id="consent">
+        <label for="consent">
+          I consent to verification through Aadhaar, DigiLocker, and other databases. Privacy Policy applies.
+        </label>
+      </div>
+      <div class="info">
+        <span style="font-size:18px;color:var(--success);">&#10003;</span>
+        Funds will be directly transferred to your bank account upon approval.
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="btn-row" id="btnRow"></div>
+  </form>
+</div>
+
+<div class="ap-toast" id="apToast"></div>
+
+<script>
+  // Config
+  const states = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+    "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+    "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
+    "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
+  ];
+  const reliefTypes = [
+    "Financial Assistance for Victim",
+    "Incentive for Inter-caste Marriage",
+    "Compensation for Property Damage",
+    "Medical Assistance",
+    "Legal Aid Support",
+    "Rehabilitation Support"
+  ];
+
+  // State
+  let step = 1;
+  const totalSteps = 3;
+
+  // Progress Bar Drawing
+  function drawProgress() {
+    const prg = document.getElementById('progressSteps');
+    prg.innerHTML = "";
+    for(let s=1;s<=totalSteps;s++){
+      let c = document.createElement("div");
+      c.className = "circle " + (s<step?"complete":s===step?"current":"upcoming");
+      c.innerHTML = s<step ? "&#10003;" : s;
+      prg.appendChild(c);
+      if(s<totalSteps){
+        let l = document.createElement("div");
+        l.className = "line" + (s<step?" complete":"");
+        prg.appendChild(l);
+      }
+    }
+    for(let i=1;i<=totalSteps;i++){
+      document.getElementById("lbl-step-"+i)
+        .className = (i===step?"active":"");
+    }
+  }
+  drawProgress();
+
+  function showStep(n){
+    for(let i=1;i<=totalSteps;i++){
+      document.getElementById("step-"+i).style.display = (i===n?"block":"none");
+    }
+    drawProgress();
+    drawNav();
+  }
+
+  // Navigation
+  function drawNav(){
+    const nav = document.getElementById("btnRow");
+    nav.innerHTML = "";
+    if(step>1){
+      let btnPrev = document.createElement("button");
+      btnPrev.type="button"; btnPrev.className="outline";
+      btnPrev.innerText = "Previous";
+      btnPrev.onclick = function(){
+        step -= 1; showStep(step);
+      };
+      nav.appendChild(btnPrev);
+    }
+    let btnNext = document.createElement("button");
+    btnNext.type="submit";
+    btnNext.innerText = step<totalSteps ? "Next Step" : "Submit Application";
+    nav.appendChild(btnNext);
+  }
+  drawNav();
+
+  // Populate select options
+  states.forEach(state=>{
+    let opt=document.createElement("option");
+    opt.value=state;opt.textContent=state;
+    document.getElementById("state").appendChild(opt);
+  });
+  reliefTypes.forEach(type=>{
+    let opt=document.createElement("option");
+    opt.value=type;opt.textContent=type;
+    document.getElementById("reliefType").appendChild(opt);
+  });
+
+  // Toasts
+  function apToast(msg){
+    const t=document.getElementById("apToast");
+    t.textContent=msg;t.classList.add("active");
+    setTimeout(()=>t.classList.remove("active"), 1800);
+  }
+
+  // Form Handling
+  document.getElementById("applyForm").onsubmit=function(e){
+    e.preventDefault();
+    if(step < totalSteps){
+      // Validate step (HTML5 validation covers most)
+      let valid=true;
+      Array.from(document.getElementById("step-"+step).querySelectorAll("input,select,textarea")).forEach(i=>{
+        if(!i.checkValidity()) valid=false;
+      });
+      if(!valid){apToast("Fill all required fields!"); return;}
+      step+=1; showStep(step);
+      apToast("Step "+(step-1)+" completed!");
+    }else{
+      // Final submission
+      apToast("Application submitted! You'll receive a tracking ID.");
+      this.reset(); step=1; showStep(step);
+    }
+  }
+</script>
+</body>
+</html>

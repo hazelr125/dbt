@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Grievance Redressal - DBT Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav> ...navbar.html... </nav>
+  <main>
+    <h1>Grievance Redressal</h1>
+    <div style="display:flex;max-width:800px;margin:auto;gap:2em;">
+      <form id="grievanceForm" class="card" style="flex:1;">
+        <label class="label">Full Name</label>
+        <input type="text" name="name" required>
+        <label class="label">Email Address</label>
+        <input type="email" name="email" required>
+        <label class="label">Mobile Number</label>
+        <input type="tel" name="mobile" required>
+        <label class="label">Tracking ID</label>
+        <input type="text" name="trackingId" placeholder="DBT2025XXXXXX">
+        <label class="label">Category</label>
+        <select name="category" required>
+          <option value="">Select</option>
+          <option>Processing Delay</option>
+          <option>Technical Issue</option>
+          <option>Document Verification</option>
+          <option>Payment Related</option>
+          <option>Application Status</option>
+          <option>Portal Access</option>
+          <option>Other</option>
+        </select>
+        <label class="label">Subject</label>
+        <input type="text" name="subject" required>
+        <label class="label">Description</label>
+        <textarea name="description" required></textarea>
+        <button type="submit" class="btn">Submit Grievance</button>
+      </form>
+      <div id="grievanceStatus" style="flex:1;text-align:center;"></div>
+    </div>
+    <script>
+      document.getElementById('grievanceForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('grievanceStatus').innerHTML = "<span style='color:green'>Grievance submitted successfully! You will receive updates via SMS and email.</span>";
+        this.reset();
+      });
+    </script>
+  </main>
+  <footer> ...footer.html... </footer>
+</body>
+</html>

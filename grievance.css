@@ -1,0 +1,277 @@
+/* Base resets */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6; /* bg-accent */
+  color: #1f2937; /* text-gray-800 */
+  min-height: 100vh;
+}
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem 3rem;
+}
+
+/* Header */
+h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #111827;
+}
+p.description {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 1.125rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.tab-button {
+  flex: 1;
+  padding: 0.75rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.tab-button svg {
+  height: 1rem;
+  width: 1rem;
+  stroke: #374151;
+  stroke-width: 1.5;
+  fill: none;
+}
+.tab-button.active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+.tab-button.active svg {
+  stroke: white;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  gap: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 4px #3b82f6;
+}
+
+textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+/* Badge */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  display: inline-block;
+  color: white;
+  user-select: none;
+}
+.bg-secondary {
+  background-color: #22c55e;
+}
+.bg-primary {
+  background-color: #3b82f6;
+}
+.bg-muted {
+  background-color: #d1d5db;
+  color: #4b5563;
+}
+
+/* Notification box */
+.notification {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border: 1px solid #c7d2fe;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Alert circle icon style */
+.notification svg {
+  stroke: #4338ca;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #3b82f6;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s;
+}
+.button svg {
+  stroke: white;
+  width: 1rem;
+  height: 1rem;
+}
+.button:hover {
+  background-color: #2563eb;
+}
+.button.outline {
+  background-color: transparent;
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+}
+.button.outline:hover {
+  background-color: #3b82f6;
+  color: white;
+}
+
+/* List of grievances */
+.grievance-list > .card {
+  border: 2px solid #d1d5db;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+.grievance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.grievance-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.grievance-meta {
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.grievance-meta span:not(:last-child):after {
+  content: "•";
+  margin-left: 0.5rem;
+  color: #9ca3af;
+}
+
+.grievance-dates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.grievance-dates p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+.grievance-dates .date-value {
+  font-weight: 700;
+  color: #374151;
+}
+
+.grievance-response {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.grievance-response svg {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 2;
+}
+
+.grievance-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+  }
+}

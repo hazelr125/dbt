@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Track Application - DBT Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav> ...navbar.html... </nav>
+  <main>
+    <h1>Track Your Application</h1>
+    <form id="trackForm" class="card" style="max-width:400px;margin:auto;">
+      <label class="label">Tracking ID / Mobile Number</label>
+      <input type="text" name="trackId" required>
+      <button type="submit" class="btn">Search</button>
+    </form>
+    <div id="trackResult" style="text-align:center;margin-top:2em;"></div>
+    <script>
+      document.getElementById('trackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Demo: always show mock result
+        document.getElementById('trackResult').innerHTML =
+          `<div class="card">
+            <strong>Status:</strong> Under Review<br>
+            <strong>Applicant Name:</strong> Rajesh Kumar<br>
+            <strong>Tracking ID:</strong> DBT2025001234<br>
+            <strong>Submitted:</strong> 2025-03-15<br>
+            <strong>Type:</strong> Financial Assistance for Victim<br>
+            <strong>Current Stage:</strong> Document Verification<br>
+            <strong>Estimated Completion:</strong> 2025-04-05
+          </div>`;
+      });
+    </script>
+  </main>
+  <footer> ...footer.html... </footer>
+</body>
+</html>

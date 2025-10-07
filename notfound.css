@@ -1,0 +1,55 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f3f4f6;
+}
+.notfound-outer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f3f4f6;
+}
+.notfound-inner {
+  text-align: center;
+  background: #fff;
+  border-radius: 1.3rem;
+  box-shadow: 0 3px 18px rgba(30,60,140,0.08);
+  padding: 3.2rem 2.5rem;
+  max-width: 370px;
+}
+.notfound-inner h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0 0 1.3rem 0;
+  color: #2d3e92;
+}
+.notfound-inner p {
+  font-size: 1.25rem;
+  margin: 0 0 2rem 0;
+  color: #585863;
+}
+.notfound-inner a {
+  color: #2563eb;
+  font-size: 1.05rem;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.notfound-inner a:hover {
+  color: #1d4ed8;
+}
+@media (max-width: 500px) {
+  .notfound-inner {
+    padding: 2.2rem 1rem;
+  }
+  .notfound-inner h1 {
+    font-size: 2.4rem;
+  }
+  .notfound-inner p {
+    font-size: 1rem;
+  }
+}

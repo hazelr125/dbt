@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f3f4f6;
+  color: #1f2937;
+}
+a { color: inherit; text-decoration: none }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.gradient-hero {
+  background: linear-gradient(90deg, #2336a3 0%, #5b7fff 100%);
+  position: relative;
+}
+.gradient-hero .container {
+  position: relative;
+  z-index: 2;
+}
+.bg-card { background: #fff; }
+.bg-accent { background: #e0e7ff; }
+.text-primary { color: #2336a3; }
+.text-secondary { color: #16a34a; }
+.text-muted-foreground { color: #6b7280; }
+.text-white { color: #fff; }
+.border-border { border-color: #d1d5db; }
+.border-y { border-top: 1px solid #d1d5db; border-bottom: 1px solid #d1d5db; }
+.stats-section { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+@media (min-width: 768px) {
+  .stats-section { grid-template-columns: repeat(4, 1fr); }
+}
+.stats-section .stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.stats-section .stat-label {
+  font-size: 15px;
+  color: #6b7280;
+}
+.feature-grid, .user-type-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.feature-grid { grid-template-columns: repeat(2, 1fr);}
+@media (min-width: 1024px) {
+  .feature-grid { grid-template-columns: repeat(4, 1fr);}
+  .user-type-grid { grid-template-columns: repeat(3, 1fr);}
+}
+.card {
+  background: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 1rem;
+  transition: box-shadow .25s, border-color .25s;
+  box-shadow: 0 1px 5px rgb(0 0 0 / 0.06);
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  position: relative;
+}
+.card:hover { border-color: #2336a3; }
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.stat-card { padding-top: 2rem; }
+.icon-circle, .icon-rounded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2336a3 70%, #5b7fff 100%);
+  margin-bottom: 1rem;
+  height: 3.5rem; width: 3.5rem;
+}
+.icon-rounded {
+  background: #e0e7ff;
+  color: #2336a3;
+  height: 4rem; width: 4rem; margin-bottom: 1.5rem;
+}
+.gradient-primary, .gradient-hero .icon-gradient {
+  background: linear-gradient(90deg, #2336a3 80%, #5b7fff 100%);
+  color: #fff;
+}
+.user-type-grid .card-content { padding-top: 2rem; padding-bottom: 1.5rem;}
+.user-type-grid .icon-rounded { margin-bottom: 1rem; }
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  background: #2336a3;
+  border: none;
+  color: #fff;
+  border-radius: .6rem;
+  font-weight: 700;
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background .2s;
+  box-shadow: 0 1px 4px rgba(92, 112, 220, 0.13);
+}
+.button.secondary {
+  background: #fff; color: #2336a3; border: 1.5px solid #c7d2fe;
+}
+.button.outline {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.3);
+  font-weight: 600;
+}
+.button.outline:hover {
+  background: #fff; color: #2336a3; border-color: #fff;
+}
+.button.hero {
+  background: #fff;
+  color: #2336a3;
+  border: none;
+}
+.button.hero:hover { background: #f3f4f6;}
+@media (max-width:700px) {
+  .stats-section, .feature-grid, .user-type-grid { grid-template-columns: 1fr; }
+  .feature-grid, .user-type-grid, .stats-section{ gap: 1rem;}
+  .gradient-hero, .bg-accent { padding-right:.2rem; padding-left:.2rem;}
+}
+.steps-section {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+}
+@media (min-width:900px) {
+  .steps-grid { grid-template-columns: repeat(4,1fr);}
+}
+.step-circle {
+  background: linear-gradient(90deg, #2336a3 90%, #5b7fff 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 2rem;
+  width: 4rem; height: 4rem; border-radius: 999px;
+  margin: 0 auto 1rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.cta-section {
+  text-align: center;
+}
+.cta-section .button { font-size:1.28rem; padding:1.2rem 2.5rem;}
+/* Utility */
+.mb-4 { margin-bottom: 1rem;}
+.mb-6 { margin-bottom: 1.5rem;}
+.mb-8 { margin-bottom: 2rem;}
+.mb-12 { margin-bottom: 3rem;}
+.py-12 { padding-top: 3rem; padding-bottom: 3rem;}
+.py-16 { padding-top: 4rem; padding-bottom: 4rem;}
+.py-20 { padding-top: 5rem; padding-bottom: 5rem;}
+.py-24 { padding-top: 6rem; padding-bottom: 6rem;}
+@media (max-width:650px) {
+  .mb-12 {margin-bottom: 2rem;}
+  .py-24, .py-16, .py-20 { padding-top: 2rem; padding-bottom: 2rem;}
+}

@@ -1,0 +1,90 @@
+/* style.css: Basic styles, feel free to extend */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6faff;
+  color: #1b2836;
+  margin: 0;
+}
+nav {
+  background: #fff;
+  border-bottom: 1px solid #dbe4ef;
+  box-shadow: 0 2px 4px #00000005;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+}
+.nav-link {
+  color: #444;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 0;
+}
+.nav-link.active, .nav-link:hover {
+  color: #234aae;
+  font-weight: bold;
+}
+footer {
+  background: #fff;
+  border-top: 1px solid #dbe4ef;
+  color: #888;
+  padding: 2em 0 1em 0;
+  margin-top: 2em;
+  font-size: 0.95em;
+}
+.btn, button {
+  appearance: none;
+  padding: 0.7em 2em;
+  border-radius: 4px;
+  border: none;
+  font-weight: 600;
+  background: #234aae;
+  color: #fff;
+  cursor: pointer;
+}
+.btn-outline {
+  background: #fff;
+  color: #234aae;
+  border: 1px solid #234aae;
+}
+.hero {
+  background: linear-gradient(135deg, #234aae 0%, #38b6ff 100%);
+  color: #fff;
+  padding: 4em 0 3em 0;
+  text-align: center;
+}
+.stats-section, .features-section, .user-types-section, .how-it-works-section {
+  padding: 2.2em 0;
+}
+.stats-grid, .features-grid, .user-types-grid {
+  display: grid;
+  grid-gap: 2em;
+}
+.stats-grid { grid-template-columns: repeat(4, 1fr);}
+.features-grid { grid-template-columns: repeat(4, 1fr);}
+.user-types-grid { grid-template-columns: repeat(3, 1fr);}
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 2em;
+}
+input, select, textarea {
+  width: 100%;
+  margin-bottom: 1em;
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.label {
+  font-weight: 700;
+  margin-bottom: .4em;
+  display: block;
+}
+section {
+  margin-bottom: 2em;
+}
+/* Add more as needed */

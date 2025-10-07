@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Apply for Relief - DBT Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+    <a href="home.html" style="font-weight:bold;color:#234aae;font-size:1.2em;">DBT Portal</a>
+    <div class="nav-links">
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="apply.html" class="nav-link">Apply</a>
+      <a href="track.html" class="nav-link">Track</a>
+      <a href="grievance.html" class="nav-link">Grievance</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </div>
+  </div>
+</nav>
+
+  <main>
+    <section>
+      <h1>Apply for Relief</h1>
+      <form id="applyForm" class="card" style="max-width:480px;margin:auto;">
+        <label class="label">Aadhaar Number</label>
+        <input type="text" name="aadhaar" required>
+        <label class="label">Mobile Number</label>
+        <input type="tel" name="mobile" required>
+        <label class="label">Full Name</label>
+        <input type="text" name="name" required>
+        <label class="label">Email Address</label>
+        <input type="email" name="email" required>
+        <label class="label">Address</label>
+        <textarea name="address" required></textarea>
+        <label class="label">State</label>
+        <select name="state" required>
+          <option value="">Select State</option>
+          <option>Andhra Pradesh</option>
+          <option>Arunachal Pradesh</option>
+          <!-- etc... -->
+        </select>
+        <label class="label">District</label>
+        <input type="text" name="district" required>
+        <label class="label">Relief Type</label>
+        <select name="reliefType" required>
+          <option value="">Select</option>
+          <option>Financial Assistance for Victim</option>
+          <option>Incentive for Inter-caste Marriage</option>
+          <option>Compensation for Property Damage</option>
+          <option>Medical Assistance</option>
+          <option>Legal Aid Support</option>
+          <option>Rehabilitation Support</option>
+        </select>
+        <label class="label">Date of Incident</label>
+        <input type="date" name="incidentDate" required>
+        <label class="label">FIR Number (Optional)</label>
+        <input type="text" name="firNumber">
+        <label class="label">Description of Incident</label>
+        <textarea name="description" required></textarea>
+        <label class="label">Bank Account Number</label>
+        <input type="text" name="bankAccount" required>
+        <label class="label">IFSC Code</label>
+        <input type="text" name="ifscCode" required>
+        <button type="submit" class="btn">Submit Application</button>
+      </form>
+      <div id="applyResult" style="text-align:center;color:green;font-weight:bold;margin-top:1.2em;"></div>
+    </section>
+  </main>
+  <footer>
+  <div class="container" style="text-align:center;">
+    <p>Ensuring timely, transparent, and accountable delivery of financial relief under PCR and PoA Acts.</p>
+    <div>
+      Quick Links: 
+      <a href="apply.html">Apply</a> | 
+      <a href="track.html">Track</a> | 
+      <a href="grievance.html">Grievance</a> | 
+      <a href="support.html">Support</a>
+    </div>
+    <div style="margin-top:1em;">&copy; 2025 Government of India. All rights reserved.</div>
+  </div>
+</footer>
+
+  <script>
+    document.getElementById('applyForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('applyResult').innerText = "Application submitted successfully! You will receive a tracking ID shortly.";
+      this.reset();
+    });
+  </script>
+</body>
+</html>

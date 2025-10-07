@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard - DBT Portal</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <h1>Admin Dashboard</h1>
+      <p class="description">
+        Monitor and manage DBT applications, track fund utilization, and review cases
+      </p>
+    </header>
+
+    <!-- Stats Grid -->
+    <section class="stats-grid" aria-label="Statistics overview">
+      <article class="card" tabindex="0" aria-label="Total Applications">
+        <div class="flex-between" style="margin-bottom: 1rem;">
+          <div class="icon-circle" aria-hidden="true">
+            <!-- FileText icon -->
+            <svg fill="white" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path stroke="white" stroke-width="2" d="M14 2v6h6"/></svg>
+          </div>
+          <span class="stat-change text-secondary" aria-live="polite">+12.5%</span>
+        </div>
+        <p class="stat-value">2,847</p>
+        <p class="stat-label">Total Applications</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Pending Review">
+        <div class="flex-between" style="margin-bottom: 1rem;">
+          <div class="icon-circle" style="background: #ca8a04;" aria-hidden="true">
+            <!-- Clock icon -->
+            <svg fill="white" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/><path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="stat-change text-destructive" aria-live="polite">-8.2%</span>
+        </div>
+        <p class="stat-value">342</p>
+        <p class="stat-label">Pending Review</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Approved Applications">
+        <div class="flex-between" style="margin-bottom: 1rem;">
+          <div class="icon-circle" style="background: #22c55e;" aria-hidden="true">
+            <!-- CheckCircle2 icon -->
+            <svg fill="white" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="stat-change text-secondary" aria-live="polite">+15.3%</span>
+        </div>
+        <p class="stat-value">2,187</p>
+        <p class="stat-label">Approved</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Funds Disbursed">
+        <div class="flex-between" style="margin-bottom: 1rem;">
+          <div class="icon-circle" aria-hidden="true" style="background: linear-gradient(90deg, #1e40af, #4338ca);">
+            <!-- IndianRupee icon simplified -->
+            <svg fill="white" viewBox="0 0 24 24"><path d="M7 21h10m-5-10v10m5-14H7l10 10"/></svg>
+          </div>
+          <span class="stat-change text-secondary" aria-live="polite">+23.1%</span>
+        </div>
+        <p class="stat-value">₹45.2 Cr</p>
+        <p class="stat-label">Funds Disbursed</p>
+      </article>
+    </section>
+
+    <!-- Fund Utilization and Priority Cases -->
+    <section class="grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin-bottom: 2rem;">
+      <article class="card" aria-label="Fund Utilization">
+        <h2 style="display:flex;align-items:center;gap:0.5rem; font-size:1.25rem; margin-bottom:0.25rem;">
+          <svg fill="#1e40af" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
+          Fund Utilization
+        </h2>
+        <p style="color:#6b7280; margin-top:-1rem; margin-bottom:1rem;">Current month breakdown</p>
+
+        <div class="fund-item">
+          <div class="flex-between">
+            <span class="fund-label">Sanctioned</span>
+            <span class="fund-value">₹50 Cr</span>
+          </div>
+          <div class="progress-bar" aria-label="Sanctioned fund progress 100 percent">
+            <div class="progress-fill bg-primary" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <div class="fund-item">
+          <div class="flex-between">
+            <span class="fund-label">Disbursed</span>
+            <span class="fund-value">₹45.2 Cr</span>
+          </div>
+          <div class="progress-bar" aria-label="Disbursed fund progress 90.4 percent">
+            <div class="progress-fill bg-secondary" style="width: 90.4%;"></div>
+          </div>
+        </div>
+
+        <div class="fund-item">
+          <div class="flex-between">
+            <span class="fund-label">Pending</span>
+            <span class="fund-value">₹4.8 Cr</span>
+          </div>
+          <div class="progress-bar" aria-label="Pending fund progress 9.6 percent">
+            <div class="progress-fill bg-yellow" style="width: 9.6%;"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card priority-cases" aria-label="Priority Cases">
+        <h2 style="display: flex;align-items:center;gap:0.5rem; font-size:1.25rem; margin-bottom:0.25rem;">
+          <svg fill="#dc2626" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 14v-4m0-4v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Priority Cases
+        </h2>
+        <p style="color:#6b7280; margin-top:-1rem; margin-bottom:1rem;">Applications requiring immediate attention</p>
+
+        <div>
+          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
+            <div class="case-info">
+              <p>Critical Medical Case</p>
+              <p>ID: DBT2025001150 • Medical</p>
+            </div>
+            <div style="display:flex; gap: 0.75rem; align-items:center;">
+              <span class="badge">12 days</span>
+              <button class="button outline" aria-label="Review Critical Medical Case">
+                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
+                </svg>
+                Review
+              </button>
+            </div>
+          </div>
+
+          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
+            <div class="case-info">
+              <p>Legal Emergency</p>
+              <p>ID: DBT2025001078 • Legal</p>
+            </div>
+            <div style="display:flex; gap: 0.75rem; align-items:center;">
+              <span class="badge">18 days</span>
+              <button class="button outline" aria-label="Review Legal Emergency">
+                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
+                </svg>
+                Review
+              </button>
+            </div>
+          </div>
+
+          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
+            <div class="case-info">
+              <p>Immediate Relief Required</p>
+              <p>ID: DBT2025000892 • Financial</p>
+            </div>
+            <div style="display:flex; gap: 0.75rem; align-items:center;">
+              <span class="badge">25 days</span>
+              <button class="button outline" aria-label="Review Immediate Relief Required">
+                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
+                  <circle cx="12" cy="12" r="3"/>
+                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
+                </svg>
+                Review
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Recent Applications -->
+    <section class="recent-applications" aria-label="Recent applications for review">
+      <header class="recent-header">
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <svg fill="#1e40af" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-3-3.87"/></svg>
+          <h2>Recent Applications</h2>
+        </div>
+        <div style="display:flex; gap:0.5rem;">
+          <button class="button outline" aria-label="Filter applications">
+            <svg width="16" height="16" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
+              <path d="M3 4h18M5 12h14M7 20h10" />
+            </svg>
+            Filter
+          </button>
+          <button class="button outline" aria-label="Export applications">
+            <svg fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="16" height="16" style="margin-right: 0.2rem;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Export
+          </button>
+        </div>
+      </header>
+
+      <!-- Filters -->
+      <form aria-label="Filter applications">
+        <div class="filters">
+          <div class="search-container">
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <circle cx="10.5" cy="10.5" r="7.5" stroke="#6b7280" stroke-width="2" fill="none"/>
+              <line x1="21" y1="21" x2="15.8" y2="15.8" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input
+              type="search"
+              placeholder="Search by ID, name, or mobile..."
+              class="search-input"
+              aria-label="Search by ID, name, or mobile"
+            />
+          </div>
+
+          <div class="select">
+            <select aria-label="Filter by status">
+              <option value="all">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="review">Under Review</option>
+              <option value="approved">Approved</option>
+              <option value="disbursed">Disbursed</option>
+            </select>
+          </div>
+
+          <div class="select">
+            <select aria-label="Filter by relief type">
+              <option value="all">All Types</option>
+              <option value="financial">Financial Assistance</option>
+              <option value="medical">Medical Assistance</option>
+              <option value="legal">Legal Aid</option>
+              <option value="marriage">Inter-caste Marriage</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <!-- Applications Table -->
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Application ID</th>
+              <th>Beneficiary</th>
+              <th>Relief Type</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>DBT2025001245</code></td>
+              <td>Priya Sharma</td>
+              <td>Financial Assistance</td>
+              <td>₹50,000</td>
+              <td><span class="status-badge status-pending">Pending</span></td>
+              <td>24 Mar</td>
+              <td>
+                <button class="button outline" aria-label="View Priya Sharma application details">
+                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
+                  </svg>
+                </button>
+                <button class="button" aria-label="Review Priya Sharma application">Review</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><code>DBT2025001244</code></td>
+              <td>Amit Kumar</td>
+              <td>Inter-caste Marriage</td>
+              <td>₹2,50,000</td>
+              <td><span class="status-badge status-review">Under Review</span></td>
+              <td>24 Mar</td>
+              <td>
+                <button class="button outline" aria-label="View Amit Kumar application details">
+                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
+                  </svg>
+                </button>
+                <button class="button" aria-label="Review Amit Kumar application">Review</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><code>DBT2025001243</code></td>
+              <td>Sunita Devi</td>
+              <td>Medical Assistance</td>
+              <td>₹1,00,000</td>
+              <td><span class="status-badge status-approved">Approved</span></td>
+              <td>23 Mar</td>
+              <td>
+                <button class="button outline" aria-label="View Sunita Devi application details">
+                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
+                  </svg>
+                </button>
+                <button class="button" aria-label="Review Sunita Devi application">Review</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><code>DBT2025001242</code></td>
+              <td>Rajesh Singh</td>
+              <td>Legal Aid</td>
+              <td>₹75,000</td>
+              <td><span class="status-badge status-pending">Pending</span></td>
+              <td>23 Mar</td>
+              <td>
+                <button class="button outline" aria-label="View Rajesh Singh application details">
+                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
+                  </svg>
+                </button>
+                <button class="button" aria-label="Review Rajesh Singh application">Review</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><code>DBT2025001241</code></td>
+              <td>Meera Patel</td>
+              <td>Financial Assistance</td>
+              <td>₹50,000</td>
+              <td><span class="status-badge status-disbursed">Disbursed</span></td>
+              <td>22 Mar</td>
+              <td>
+                <button class="button outline" aria-label="View Meera Patel application details">
+                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
+                  </svg>
+                </button>
+                <button class="button" aria-label="Review Meera Patel application">Review</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination" aria-label="Pagination navigation">
+        <p class="pagination-info">Showing 1-5 of 2,847 applications</p>
+        <div class="pagination-buttons">
+          <button disabled aria-label="Previous page">Previous</button>
+          <button class="active" aria-current="page">1</button>
+          <button aria-label="Page 2">2</button>
+          <button aria-label="Page 3">3</button>
+          <button aria-label="Next page">Next</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
