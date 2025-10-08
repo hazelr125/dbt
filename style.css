@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #F3F7FE;
+    color: #222;
+}
+.portal-header {
+    background: #fff;
+    border-bottom: 1px solid #e8ebef;
+    padding: 14px 0;
+}
+.portal-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+}
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #176dff;
+}
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+nav a.active {
+    color: #176dff;
+    border-bottom: 2px solid #176dff;
+}
+.get-started {
+    background: #176dff;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.grievance-container {
+    background: #eaf1fd;
+    margin: 32px auto;
+    max-width: 800px;
+    padding: 36px 32px;
+    border-radius: 18px;
+    box-shadow: 0 6px 28px -8px #7ea5f344;
+}
+h1 {
+    text-align: center;
+    color: #2469d9;
+}
+.btn-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.btn-primary, .btn-outline {
+    margin: 0 10px;
+    padding: 12px 36px;
+    border: none;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+.btn-primary {
+    background: #176dff;
+    color: #fff;
+}
+.btn-outline {
+    background: #fff;
+    color: #176dff;
+    border: 2px solid #176dff;
+}
+.grievance-form {
+    background: #fff;
+    padding: 24px 18px;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px -7px #8cc6fd33;
+    margin-top: 24px;
+}
+.grievance-form h2 {
+    color: #176dff;
+    font-size: 1.3em;
+    margin-bottom: 14px;
+}
+.form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+.form-row input, .form-row select {
+    flex: 1;
+    padding: 10px;
+    border: 1.2px solid #b2d0f5;
+    border-radius: 7px;
+    font-size: 1em;
+    background: #f4f9ff;
+}
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1.2px solid #b2d0f5;
+    border-radius: 7px;
+    font-size: 1em;
+    background: #f4f9ff;
+    margin-bottom: 16px;
+}
+.submit-btn {
+    width: 100%;
+    font-size: 1.05em;
+    margin-top: 8px;
+}
+.footer {
+    background: #fff;
+    border-top: 1px solid #e8ebef;
+    padding: 28px 0;
+    margin-top: 40px;
+}
+.footer .container {
+    display: flex;
+    gap: 32px;
+    max-width: 1200px;
+    margin: auto;
+}
+.footer-col {
+    flex: 1;
+    font-size: 0.98em;
+    color: #3e4a62;
+}
+
+@media (max-width: 900px) {
+    .container, .footer .container {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+    }
+    .grievance-container {
+        padding: 16px 5vw;
+    }
+}

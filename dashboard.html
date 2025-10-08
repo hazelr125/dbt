@@ -1,428 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Admin Dashboard - DBT Portal</title>
-  <link rel="stylesheet" href="dashboard.css" />
-  <link rel="stylesheet" href="navbar.css">
+  <meta charset="UTF-8">
+  <title>DBT Portal - Dashboard</title>
+  <link rel="stylesheet" href="dashboard-style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <nav class="navbar">
+<nav class="navbar">
   <div class="navbar-inner">
-    <div class="navbar-row">
-      <!-- Logo -->
-      <a href="/" class="navbar-logo">
-        <!-- Shield icon -->
-        <svg width="28" height="28" fill="none" stroke="#2336a3" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"/></svg>
-        <span>DBT Portal</span>
-      </a>
-      <!-- Desktop Links -->
-      <div class="navbar-links">
-        <a href="/" class="navbar-link active">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-linecap="round" stroke-width="2"><path d="M3 12l2-2m0 0V7.5A2.5 2.5 0 017.5 5h9A2.5 2.5 0 0119 7.5V10m-14 0l7 7 7-7"/></svg>
-          Home
-        </a>
-        <a href="/apply" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="8" x2="16" y2="8"/></svg>
-          Apply
-        </a>
-        <a href="/track" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          Track
-        </a>
-        <a href="/grievance" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Grievance
-        </a>
-        <a href="/dashboard" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          Dashboard
-        </a>
-        <a href="/support" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/></svg>
-          Support
-        </a>
-      </div>
-      <!-- Desktop CTA -->
-      <a href="/apply" class="btn-cta">Get Started</a>
-      <!-- Mobile Hamburger -->
-      <button class="toggle-btn" onclick="document.getElementById('nav-mobile').classList.toggle('open');">
-        <!-- Hamburger -->
-        <svg id="hamburger" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-      </button>
+    <a href="/" class="navbar-logo">
+      <svg width="32" height="32" fill="none" stroke="#0e46d6" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"></path></svg>
+      DBT Portal
+    </a>
+    <div class="navbar-menu">
+      <a href="/" ><svg width="18" height="18" stroke="#0e46d6" fill="none"><path d="M3 12l7 7 7-7"/><path d="M5 10V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v5" stroke-width="2"/></svg> Home</a>
+      <a href="/apply" class="active"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="4" y="4" width="10" height="12" stroke-width="2"/></svg> Apply</a>
+      <a href="/track"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="4" y="4" width="10" height="12" stroke-width="2"/><line x1="6" y1="8" x2="14" y2="8" stroke-width="2"/></svg> Track</a>
+      <a href="/grievance"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="2" y="2" width="14" height="14" stroke-width="2"/></svg> Grievance</a>
+      <a href="/dashboard"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="3" y="3" width="12" height="12" stroke-width="2"/></svg> Dashboard</a>
+      <a href="/support"><svg width="18" height="18" stroke="#0e46d6" fill="none">ircle cx="9" cy="9" r="7" stroke-widthth="2"/></svg> Support</a>
     </div>
-    <!-- Mobile Nav -->
-    <div class="navbar-mobile" id="nav-mobile">
-      <div class="navbar-mobile-links">
-        <a href="/" class="navbar-link active">Home</a>
-        <a href="/apply" class="navbar-link">Apply</a>
-        <a href="/track" class="navbar-link">Track</a>
-        <a href="/grievance" class="navbar-link">Grievance</a>
-        <a href="/dashboard" class="navbar-link">Dashboard</a>
-        <a href="/support" class="navbar-link">Support</a>
-      </div>
-      <div class="navbar-mobile-cta">
-        <a href="/apply" class="btn-cta" style="width:100%;">Get Started</a>
-      </div>
-    </div>
+    <a href="/apply" class="get-started-btn">Get Started</a>
   </div>
-  <script>
-    // Mobile nav toggle: make hamburger toggle show/hide mobile menu
-    document.querySelector('.toggle-btn').addEventListener('click', function(){
-      document.getElementById('nav-mobile').classList.toggle('open');
-      if(document.getElementById('nav-mobile').classList.contains('open'))
-        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'; // X
-      else
-        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>'; // menu
-    });
-  </script>
 </nav>
 
-  <div class="container">
-    <!-- Header -->
-    <header class="header">
-      <h1>Admin Dashboard</h1>
-      <p class="description">
-        Monitor and manage DBT applications, track fund utilization, and review cases
-      </p>
-    </header>
-
-    <!-- Stats Grid -->
-    <section class="stats-grid" aria-label="Statistics overview">
-      <article class="card" tabindex="0" aria-label="Total Applications">
-        <div class="flex-between" style="margin-bottom: 1rem;">
-          <div class="icon-circle" aria-hidden="true">
-            <!-- FileText icon -->
-            <svg fill="white" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path stroke="white" stroke-width="2" d="M14 2v6h6"/></svg>
-          </div>
-          <span class="stat-change text-secondary" aria-live="polite">+12.5%</span>
-        </div>
-        <p class="stat-value">2,847</p>
-        <p class="stat-label">Total Applications</p>
-      </article>
-
-      <article class="card" tabindex="0" aria-label="Pending Review">
-        <div class="flex-between" style="margin-bottom: 1rem;">
-          <div class="icon-circle" style="background: #ca8a04;" aria-hidden="true">
-            <!-- Clock icon -->
-            <svg fill="white" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="2" fill="none"/><path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="stat-change text-destructive" aria-live="polite">-8.2%</span>
-        </div>
-        <p class="stat-value">342</p>
-        <p class="stat-label">Pending Review</p>
-      </article>
-
-      <article class="card" tabindex="0" aria-label="Approved Applications">
-        <div class="flex-between" style="margin-bottom: 1rem;">
-          <div class="icon-circle" style="background: #22c55e;" aria-hidden="true">
-            <!-- CheckCircle2 icon -->
-            <svg fill="white" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-          <span class="stat-change text-secondary" aria-live="polite">+15.3%</span>
-        </div>
-        <p class="stat-value">2,187</p>
-        <p class="stat-label">Approved</p>
-      </article>
-
-      <article class="card" tabindex="0" aria-label="Funds Disbursed">
-        <div class="flex-between" style="margin-bottom: 1rem;">
-          <div class="icon-circle" aria-hidden="true" style="background: linear-gradient(90deg, #1e40af, #4338ca);">
-            <!-- IndianRupee icon simplified -->
-            <svg fill="white" viewBox="0 0 24 24"><path d="M7 21h10m-5-10v10m5-14H7l10 10"/></svg>
-          </div>
-          <span class="stat-change text-secondary" aria-live="polite">+23.1%</span>
-        </div>
-        <p class="stat-value">₹45.2 Cr</p>
-        <p class="stat-label">Funds Disbursed</p>
-      </article>
-    </section>
-
-    <!-- Fund Utilization and Priority Cases -->
-    <section class="grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.5rem; margin-bottom: 2rem;">
-      <article class="card" aria-label="Fund Utilization">
-        <h2 style="display:flex;align-items:center;gap:0.5rem; font-size:1.25rem; margin-bottom:0.25rem;">
-          <svg fill="#1e40af" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12l6 6L20 6"/></svg>
-          Fund Utilization
-        </h2>
-        <p style="color:#6b7280; margin-top:-1rem; margin-bottom:1rem;">Current month breakdown</p>
-
-        <div class="fund-item">
-          <div class="flex-between">
-            <span class="fund-label">Sanctioned</span>
-            <span class="fund-value">₹50 Cr</span>
-          </div>
-          <div class="progress-bar" aria-label="Sanctioned fund progress 100 percent">
-            <div class="progress-fill bg-primary" style="width: 100%;"></div>
-          </div>
-        </div>
-
-        <div class="fund-item">
-          <div class="flex-between">
-            <span class="fund-label">Disbursed</span>
-            <span class="fund-value">₹45.2 Cr</span>
-          </div>
-          <div class="progress-bar" aria-label="Disbursed fund progress 90.4 percent">
-            <div class="progress-fill bg-secondary" style="width: 90.4%;"></div>
-          </div>
-        </div>
-
-        <div class="fund-item">
-          <div class="flex-between">
-            <span class="fund-label">Pending</span>
-            <span class="fund-value">₹4.8 Cr</span>
-          </div>
-          <div class="progress-bar" aria-label="Pending fund progress 9.6 percent">
-            <div class="progress-fill bg-yellow" style="width: 9.6%;"></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="card priority-cases" aria-label="Priority Cases">
-        <h2 style="display: flex;align-items:center;gap:0.5rem; font-size:1.25rem; margin-bottom:0.25rem;">
-          <svg fill="#dc2626" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 14v-4m0-4v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Priority Cases
-        </h2>
-        <p style="color:#6b7280; margin-top:-1rem; margin-bottom:1rem;">Applications requiring immediate attention</p>
-
-        <div>
-          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
-            <div class="case-info">
-              <p>Critical Medical Case</p>
-              <p>ID: DBT2025001150 • Medical</p>
-            </div>
-            <div style="display:flex; gap: 0.75rem; align-items:center;">
-              <span class="badge">12 days</span>
-              <button class="button outline" aria-label="Review Critical Medical Case">
-                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
-                </svg>
-                Review
-              </button>
-            </div>
-          </div>
-
-          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
-            <div class="case-info">
-              <p>Legal Emergency</p>
-              <p>ID: DBT2025001078 • Legal</p>
-            </div>
-            <div style="display:flex; gap: 0.75rem; align-items:center;">
-              <span class="badge">18 days</span>
-              <button class="button outline" aria-label="Review Legal Emergency">
-                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
-                </svg>
-                Review
-              </button>
-            </div>
-          </div>
-
-          <div tabindex="0" class="priority-case" style="margin-bottom: 0.75rem; display:flex; justify-content: space-between; align-items:center; background:#f9fafb; border:1px solid #d1d5db; border-radius:8px; padding:1rem; transition: border-color 0.3s ease; cursor:pointer;">
-            <div class="case-info">
-              <p>Immediate Relief Required</p>
-              <p>ID: DBT2025000892 • Financial</p>
-            </div>
-            <div style="display:flex; gap: 0.75rem; align-items:center;">
-              <span class="badge">25 days</span>
-              <button class="button outline" aria-label="Review Immediate Relief Required">
-                <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
-                  <circle cx="12" cy="12" r="3"/>
-                  <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>
-                </svg>
-                Review
-              </button>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Recent Applications -->
-    <section class="recent-applications" aria-label="Recent applications for review">
-      <header class="recent-header">
-        <div style="display:flex; align-items:center; gap:0.5rem;">
-          <svg fill="#1e40af" height="20" width="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-3-3.87"/></svg>
-          <h2>Recent Applications</h2>
-        </div>
-        <div style="display:flex; gap:0.5rem;">
-          <button class="button outline" aria-label="Filter applications">
-            <svg width="16" height="16" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" style="margin-right: 0.2rem;">
-              <path d="M3 4h18M5 12h14M7 20h10" />
-            </svg>
-            Filter
-          </button>
-          <button class="button outline" aria-label="Export applications">
-            <svg fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" width="16" height="16" style="margin-right: 0.2rem;">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Export
-          </button>
-        </div>
-      </header>
-
-      <!-- Filters -->
-      <form aria-label="Filter applications">
-        <div class="filters">
-          <div class="search-container">
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <circle cx="10.5" cy="10.5" r="7.5" stroke="#6b7280" stroke-width="2" fill="none"/>
-              <line x1="21" y1="21" x2="15.8" y2="15.8" stroke="#6b7280" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <input
-              type="search"
-              placeholder="Search by ID, name, or mobile..."
-              class="search-input"
-              aria-label="Search by ID, name, or mobile"
-            />
-          </div>
-
-          <div class="select">
-            <select aria-label="Filter by status">
-              <option value="all">All Status</option>
-              <option value="pending">Pending</option>
-              <option value="review">Under Review</option>
-              <option value="approved">Approved</option>
-              <option value="disbursed">Disbursed</option>
-            </select>
-          </div>
-
-          <div class="select">
-            <select aria-label="Filter by relief type">
-              <option value="all">All Types</option>
-              <option value="financial">Financial Assistance</option>
-              <option value="medical">Medical Assistance</option>
-              <option value="legal">Legal Aid</option>
-              <option value="marriage">Inter-caste Marriage</option>
-            </select>
-          </div>
-        </div>
-      </form>
-
-      <!-- Applications Table -->
-      <div class="table-container">
-        <table>
-          <thead>
-            <tr>
-              <th>Application ID</th>
-              <th>Beneficiary</th>
-              <th>Relief Type</th>
-              <th>Amount</th>
-              <th>Status</th>
-              <th>Date</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>DBT2025001245</code></td>
-              <td>Priya Sharma</td>
-              <td>Financial Assistance</td>
-              <td>₹50,000</td>
-              <td><span class="status-badge status-pending">Pending</span></td>
-              <td>24 Mar</td>
-              <td>
-                <button class="button outline" aria-label="View Priya Sharma application details">
-                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
-                  </svg>
-                </button>
-                <button class="button" aria-label="Review Priya Sharma application">Review</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><code>DBT2025001244</code></td>
-              <td>Amit Kumar</td>
-              <td>Inter-caste Marriage</td>
-              <td>₹2,50,000</td>
-              <td><span class="status-badge status-review">Under Review</span></td>
-              <td>24 Mar</td>
-              <td>
-                <button class="button outline" aria-label="View Amit Kumar application details">
-                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
-                  </svg>
-                </button>
-                <button class="button" aria-label="Review Amit Kumar application">Review</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><code>DBT2025001243</code></td>
-              <td>Sunita Devi</td>
-              <td>Medical Assistance</td>
-              <td>₹1,00,000</td>
-              <td><span class="status-badge status-approved">Approved</span></td>
-              <td>23 Mar</td>
-              <td>
-                <button class="button outline" aria-label="View Sunita Devi application details">
-                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
-                  </svg>
-                </button>
-                <button class="button" aria-label="Review Sunita Devi application">Review</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><code>DBT2025001242</code></td>
-              <td>Rajesh Singh</td>
-              <td>Legal Aid</td>
-              <td>₹75,000</td>
-              <td><span class="status-badge status-pending">Pending</span></td>
-              <td>23 Mar</td>
-              <td>
-                <button class="button outline" aria-label="View Rajesh Singh application details">
-                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
-                  </svg>
-                </button>
-                <button class="button" aria-label="Review Rajesh Singh application">Review</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><code>DBT2025001241</code></td>
-              <td>Meera Patel</td>
-              <td>Financial Assistance</td>
-              <td>₹50,000</td>
-              <td><span class="status-badge status-disbursed">Disbursed</span></td>
-              <td>22 Mar</td>
-              <td>
-                <button class="button outline" aria-label="View Meera Patel application details">
-                  <svg height="12" width="12" fill="none" stroke="#374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="3" />
-                    <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" />
-                  </svg>
-                </button>
-                <button class="button" aria-label="Review Meera Patel application">Review</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Pagination -->
-      <div class="pagination" aria-label="Pagination navigation">
-        <p class="pagination-info">Showing 1-5 of 2,847 applications</p>
-        <div class="pagination-buttons">
-          <button disabled aria-label="Previous page">Previous</button>
-          <button class="active" aria-current="page">1</button>
-          <button aria-label="Page 2">2</button>
-          <button aria-label="Page 3">3</button>
-          <button aria-label="Next page">Next</button>
-        </div>
-      </div>
-    </section>
+  <main class="dashboard">
+    <div class="dashboard-header">
+  <h1>Admin Dashboard</h1>
+  <p>Monitor and manage DBT applications, track fund utilization, and review cases</p>
+</div>
+<div class="summary-grid">
+  <div class="summary-card">
+    <div class="card-icon"><span>📄</span></div>
+    <div>
+      <div class="card-value">2,847</div>
+      <div class="card-label">Total Applications</div>
+    </div>
+    <span class="card-trend positive">+12.5%</span>
   </div>
+  <div class="summary-card">
+    <div class="card-icon"><span>🕒</span></div>
+    <div>
+      <div class="card-value">342</div>
+      <div class="card-label">Pending Review</div>
+    </div>
+    <span class="card-trend negative">-8.2%</span>
+  </div>
+  <div class="summary-card">
+    <div class="card-icon"><span>✔️</span></div>
+    <div>
+      <div class="card-value">2,187</div>
+      <div class="card-label">Approved</div>
+    </div>
+    <span class="card-trend positive">+15.3%</span>
+  </div>
+  <div class="summary-card">
+    <div class="card-icon"><span>₹</span></div>
+    <div>
+      <div class="card-value">₹45.2 Cr</div>
+      <div class="card-label">Funds Disbursed</div>
+    </div>
+    <span class="card-trend positive">+23.1%</span>
+  </div>
+</div>
+
+    
+    <section class="top-section">
+      <div class="util-section">
+        <div class="section-title">Fund Utilization</div>
+        <div class="section-subtitle">Current month breakdown</div>
+        <div class="util-row">
+          <span>Sanctioned</span>
+          <span>₹50 Cr</span>
+        </div>
+        <div class="progress-bar sanctioned"></div>
+        <div class="util-row">
+          <span>Disbursed</span>
+          <span>₹45.2 Cr</span>
+        </div>
+        <div class="progress-bar disbursed"></div>
+        <div class="util-row">
+          <span>Pending</span>
+          <span>₹4.8 Cr</span>
+        </div>
+        <div class="progress-bar pending"></div>
+      </div>
+      
+      <div class="priority-section">
+        <div class="section-title warn">Priority Cases</div>
+        <div class="section-subtitle">Applications requiring immediate attention</div>
+        <div class="priority-card">
+          <div>
+            <b>Critical Medical Case</b>
+            <div class="pri-details">ID: DBT2025001150 • Medical</div>
+          </div>
+          <span class="pri-days urgent">12 days</span>
+          <button class="pri-review">👁️ Review</button>
+        </div>
+        <div class="priority-card">
+          <div>
+            <b>Legal Emergency</b>
+            <div class="pri-details">ID: DBT2025001078 • Legal</div>
+          </div>
+          <span class="pri-days urgent">18 days</span>
+          <button class="pri-review">👁️ Review</button>
+        </div>
+        <div class="priority-card">
+          <div>
+            <b>Immediate Relief Required</b>
+            <div class="pri-details">ID: DBT2025000892 • Financial</div>
+          </div>
+          <span class="pri-days urgent">25 days</span>
+          <button class="pri-review">👁️ Review</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-section">
+      <div class="recent-header">
+        <div>
+          <span class="recent-icon">👥</span>
+          <span class="recent-title">Recent Applications</span>
+          <div class="recent-sub">Latest beneficiary applications for review</div>
+        </div>
+        <div>
+          <button class="btn-light">Filter</button>
+          <button class="btn-light">Export</button>
+        </div>
+      </div>
+      <div class="recent-filters">
+        <input type="text" placeholder="Search by ID, name, or mobile...">
+        <select>
+          <option>All Status</option>
+        </select>
+        <select>
+          <option>All Types</option>
+        </select>
+      </div>
+      <table class="recent-table">
+        <thead>
+          <tr>
+            <th>Application ID</th>
+            <th>Beneficiary</th>
+            <th>Relief Type</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DBT2025001245</td>
+            <td><b>Priya Sharma</b></td>
+            <td>Financial Assistance</td>
+            <td>₹50,000</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>24 Mar</td>
+            <td>
+              <button class="view-btn">👁️</button>
+              <button class="review-btn">Review</button>
+            </td>
+          </tr>
+          <tr>
+            <td>DBT2025001244</td>
+            <td><b>Amit Kumar</b></td>
+            <td>Inter-caste Marriage</td>
+            <td>₹2,50,000</td>
+            <td><span class="status review">Under Review</span></td>
+            <td>24 Mar</td>
+            <td>
+              <button class="view-btn">👁️</button>
+              <button class="review-btn">Review</button>
+            </td>
+          </tr>
+          <tr>
+            <td>DBT2025001243</td>
+            <td><b>Sunita Devi</b></td>
+            <td>Medical Assistance</td>
+            <td>₹1,00,000</td>
+            <td><span class="status approved">Approved</span></td>
+            <td>23 Mar</td>
+            <td>
+              <button class="view-btn">👁️</button>
+              <button class="review-btn">Review</button>
+            </td>
+          </tr>
+          <tr>
+            <td>DBT2025001242</td>
+            <td><b>Rajesh Singh</b></td>
+            <td>Legal Aid</td>
+            <td>₹75,000</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>23 Mar</td>
+            <td>
+              <button class="view-btn">👁️</button>
+              <button class="review-btn">Review</button>
+            </td>
+          </tr>
+          <tr>
+            <td>DBT2025001241</td>
+            <td><b>Meera Patel</b></td>
+            <td>Financial Assistance</td>
+            <td>₹50,000</td>
+            <td><span class="status disbursed">Disbursed</span></td>
+            <td>22 Mar</td>
+            <td>
+              <button class="view-btn">👁️</button>
+              <button class="review-btn">Review</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagination">
+        <button class="page-btn">Previous</button>
+        <button class="page-btn">1</button>
+        <button class="page-btn active">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">Next</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-col"><b>DBT Portal</b><br>
+        Ensuring timely, transparent, and accountable delivery of financial relief under PCR and PoA Acts.
+      </div>
+      <div class="footer-col"><b>Quick Links</b><br>
+        Apply for Relief<br>
+        Track Application<br>
+        File Grievance<br>
+        Support & FAQ
+      </div>
+      <div class="footer-col"><b>Resources</b><br>
+        PCR Act 1955<br>
+        PoA Act 1989<br>
+        Guidelines<br>
+        Privacy Policy
+      </div>
+      <div class="footer-col"><b>Contact Us</b><br>
+        1800-XXX-XXXX (Toll Free)<br>
+        support@dbtportal.gov.in<br>
+        Ministry of Social Justice & Empowerment, New Delhi
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

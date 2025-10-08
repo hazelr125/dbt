@@ -8,289 +8,159 @@
 <link rel="stylesheet" href="footer.css" /> 
 </head>
 <body>
-  <nav class="navbar">
+<nav class="navbar">
   <div class="navbar-inner">
-    <div class="navbar-row">
-      <!-- Logo -->
-      <a href="/" class="navbar-logo">
-        <!-- Shield icon -->
-        <svg width="28" height="28" fill="none" stroke="#2336a3" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"/></svg>
-        <span>DBT Portal</span>
-      </a>
-      <!-- Desktop Links -->
-      <div class="navbar-links">
-        <a href="home.html" class="navbar-link active">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-linecap="round" stroke-width="2"><path d="M3 12l2-2m0 0V7.5A2.5 2.5 0 017.5 5h9A2.5 2.5 0 0119 7.5V10m-14 0l7 7 7-7"/></svg>
-          Home
-        </a>
-        <a href="apply.html" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="8" x2="16" y2="8"/></svg>
-          Apply
-        </a>
-        <a href="track.html" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="4" y="4" width="12" height="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-          Track
-        </a>
-        <a href="grievance.html" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Grievance
-        </a>
-        <a href="dashboard.html" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          Dashboard
-        </a>
-        <a href="support.html" class="navbar-link">
-          <svg width="18" height="18" fill="none" stroke="#2336a3" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/></svg>
-          Support
-        </a>
-      </div>
-      <!-- Desktop CTA -->
-      <a href="apply.html" class="btn-cta">Get Started</a>
-      <!-- Mobile Hamburger -->
-      <button class="toggle-btn" onclick="document.getElementById('nav-mobile').classList.toggle('open');">
-        <!-- Hamburger -->
-        <svg id="hamburger" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-      </button>
+    <a href="/" class="navbar-logo">
+      <svg width="32" height="32" fill="none" stroke="#0e46d6" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"></path></svg>
+      DBT Portal
+    </a>
+    <div class="navbar-menu">
+      <a href="/" class="active"><svg width="18" height="18" stroke="#0e46d6" fill="none"><path d="M3 12l7 7 7-7"/><path d="M5 10V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v5" stroke-width="2"/></svg> Home</a>
+      <a href="apply.html"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="4" y="4" width="10" height="12" stroke-width="2"/></svg> Apply</a>
+      <a href="/track.html"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="4" y="4" width="10" height="12" stroke-width="2"/><line x1="6" y1="8" x2="14" y2="8" stroke-width="2"/></svg> Track</a>
+      <a href="/grievance.html"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="2" y="2" width="14" height="14" stroke-width="2"/></svg> Grievance</a>
+      <a href="/dashboard.html"><svg width="18" height="18" stroke="#0e46d6" fill="none"><rect x="3" y="3" width="12" height="12" stroke-width="2"/></svg> Dashboard</a>
+      <a href="/support.html"><svg width="18" height="18" stroke="#0e46d6" fill="none"><circle cx="9" cy="9" r="7" stroke-width="2"/></svg> Support</a>
     </div>
-    <!-- Mobile Nav -->
-    <div class="navbar-mobile" id="nav-mobile">
-      <div class="navbar-mobile-links">
-        <a href="/" class="navbar-link active">Home</a>
-        <a href="/apply" class="navbar-link">Apply</a>
-        <a href="/track" class="navbar-link">Track</a>
-        <a href="/grievance" class="navbar-link">Grievance</a>
-        <a href="/dashboard" class="navbar-link">Dashboard</a>
-        <a href="/support" class="navbar-link">Support</a>
+    <a href="/apply" class="get-started-btn">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-top-pill">
+    <svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"></path></svg>
+    Government of India Initiative
+  </div>
+  <div class="hero-title">Direct Benefit Transfer Portal</div>
+  <div class="hero-desc">
+    Smart, secure, and transparent implementation of the Protection of Civil Rights (PCR) Act, 1955 and Prevention of Atrocities (PoA) Act, 1989
+  </div>
+  <div class="hero-actions">
+    <a href="/apply" class="get-started-btn">Apply for Relief</a>
+    <a href="/track" class="get-started-btn secondary">Track Application</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="text-center">
+    <div class="stat-number primary">50,000+</div>
+    <div class="stat-label">Beneficiaries Served</div>
+  </div>
+  <div class="text-center">
+    <div class="stat-number secondary">&#8377;500 Cr+</div>
+    <div class="stat-label">Funds Disbursed</div>
+  </div>
+  <div class="text-center">
+    <div class="stat-number primary">75,000+</div>
+    <div class="stat-label">Applications Processed</div>
+  </div>
+  <div class="text-center">
+    <div class="stat-number secondary">7 Days</div>
+    <div class="stat-label">Average Processing Time</div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="container">
+    <div class="features-header text-center">
+      <h2 class="hero-title" style="font-size:2.1rem;margin-bottom:.4rem;">Why Choose Our Portal?</h2>
+      <div class="text-gray max-w-2xl" style="margin:0 auto;">Built with modern technology to ensure transparency, security, and efficiency in welfare delivery</div>
+    </div>
+    <div class="features-cards">
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="32" height="32" stroke="#fff" fill="none" stroke-width="2"><path d="M16 28s10-5.44 10-12.5V7.5L16 2 6 7.5v8C6 22.56 16 28 16 28z"></path></svg></div>
+        <div class="feature-title">Secure &amp; Verified</div>
+        <div class="feature-desc">Aadhaar-based authentication and secure document verification through DigiLocker integration</div>
       </div>
-      <div class="navbar-mobile-cta">
-        <a href="/apply" class="btn-cta" style="width:100%;">Get Started</a>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fff;color:#0e46d6;"><svg width="32" height="32" fill="none" stroke="#0e46d6" stroke-width="2"><circle cx="16" cy="16" r="12"/><polyline points="16 10 16 16 22 18"/></svg></div>
+        <div class="feature-title">Real-time Tracking</div>
+        <div class="feature-desc">Monitor your application status with transparent timeline and instant SMS/email notifications</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fff;color:#16a34a;">
+          <svg width="32" height="32" fill="none" stroke="#16a34a" stroke-width="2"><polyline points="11 19 15 23 23 15"/></svg></div>
+        <div class="feature-title">Direct Transfer</div>
+        <div class="feature-desc">Automated fund disbursement directly to your bank account through secure DBT system</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:#fff;color:#0e46d6;">
+          <svg width="32" height="32" fill="none" stroke="#0e46d6" stroke-width="2"><rect x="6" y="6" width="20" height="20" rx="5"/></svg></div>
+        <div class="feature-title">Quick Grievance</div>
+        <div class="feature-desc">Submit and track complaints with our efficient grievance redressal mechanism</div>
       </div>
     </div>
   </div>
-  <script>
-    // Mobile nav toggle: make hamburger toggle show/hide mobile menu
-    document.querySelector('.toggle-btn').addEventListener('click', function(){
-      document.getElementById('nav-mobile').classList.toggle('open');
-      if(document.getElementById('nav-mobile').classList.contains('open'))
-        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>'; // X
-      else
-        this.innerHTML = '<svg viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>'; // menu
-    });
-  </script>
-</nav>
+</section>
 
-<div class="min-h-screen">
-
-  <!-- Hero Section -->
-  <section class="gradient-hero py-20 mb-8" style="position:relative;">
-    <div class="container">
-      <div class="max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center gap-2 bg-white" style="background: rgba(255,255,255,0.18);backdrop-filter: blur(5px); padding:0.9rem 2rem; border-radius:2rem; margin-bottom:2.2rem;">
-          <span style="display:flex;align-items:center;">
-            <svg height="20" width="20" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"/></svg>
-          </span>
-          <span class="text-sm font-medium" style="color:#fff;">Government of India Initiative</span>
-        </div>
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 text-white">
-          Direct Benefit Transfer Portal
-        </h1>
-        <p class="text-lg md:text-xl mb-8 text-white text-white/90" style="opacity:0.90;max-width: 600px; margin:0 auto;">
-          Smart, secure, and transparent implementation of the Protection of Civil Rights (PCR) Act, 1955 
-          and Prevention of Atrocities (PoA) Act, 1989
-        </p>
-        <div style="display:flex; flex-direction:column; gap:1rem; align-items:center; justify-content:center; max-width: 420px; margin:0 auto;">
-          <a href="/apply" class="button hero big" style="width:100%;">Apply for Relief</a>
-          <a href="/track" class="button outline big" style="width:100%;">Track Application</a>
-        </div>
-      </div>
+<!-- GET STARTED USER TYPES -->
+<section class="getstarted-section">
+  <div class="getstarted-title">Get Started</div>
+  <div class="getstarted-desc">
+    Choose your role to access relevant features and services
+  </div>
+  <div class="user-types-cards">
+    <div class="user-type-card">
+      <div class="user-icon"><svg width="30" height="30" stroke="#0e46d6" fill="none" stroke-width="2"><circle cx="15" cy="9" r="6"/><path d="M25 27v-3a6 6 0 0 0-12 0v3"/></svg></div>
+      <div class="user-type-title">For Beneficiaries</div>
+      <div class="user-type-desc">Apply for relief, track applications, and receive direct benefit transfers</div>
+      <a href="/apply" class="user-type-btn">Apply Now</a>
     </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="py-12 bg-card border-y border-border">
-    <div class="container">
-      <div class="stats-section">
-        <div class="text-center stat-card">
-          <div class="stat-value text-primary">50,000+</div>
-          <div class="stat-label">Beneficiaries Served</div>
-        </div>
-        <div class="text-center stat-card">
-          <div class="stat-value text-secondary">₹500 Cr+</div>
-          <div class="stat-label">Funds Disbursed</div>
-        </div>
-        <div class="text-center stat-card">
-          <div class="stat-value text-primary">75,000+</div>
-          <div class="stat-label">Applications Processed</div>
-        </div>
-        <div class="text-center stat-card">
-          <div class="stat-value text-secondary">7 Days</div>
-          <div class="stat-label">Average Processing Time</div>
-        </div>
-      </div>
+    <div class="user-type-card">
+      <div class="user-icon"><svg width="30" height="30" stroke="#0e46d6" fill="none" stroke-width="2"><rect x="6" y="6" width="18" height="18" rx="5"/><path d="M6 16h18"/></svg></div>
+      <div class="user-type-title">For Administrators</div>
+      <div class="user-type-desc">Monitor cases, approve applications, and track fund utilization</div>
+      <a href="/dashboard" class="user-type-btn">Admin Login</a>
     </div>
-  </section>
-
-  <!-- Features Section -->
-  <section class="py-16">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose Our Portal?</h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
-          Built with modern technology to ensure transparency, security, and efficiency in welfare delivery
-        </p>
-      </div>
-      <div class="feature-grid">
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-circle">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="24" width="24">
-                <path d="M12 22s8-4.35 8-10V5l-8-3-8 3v7c0 5.65 8 10 8 10z"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Secure & Verified</h3>
-            <p class="text-sm text-muted-foreground">Aadhaar-based authentication and secure document verification through DigiLocker integration</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-circle" style="background:#facc15;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="24" width="24">
-                ircle cx="12" cy="12" r r="10"></circle>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Real-time Tracking</h3>
-            <p class="text-sm text-muted-foreground">Monitor your application status with transparent timeline and instant SMS/email notifications</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-circle" style="background:#16a34a;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="24" width="24"><polyline points="9 11 12 14 22 4"/></svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Direct Transfer</h3>
-            <p class="text-sm text-muted-foreground">Automated fund disbursement directly to your bank account through secure DBT system</p>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-circle" style="background:#4338ca;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="24" width="24"><path d="M21 15a2 2 0 0 1-2 2H5l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 class="font-semibold text-lg mb-2">Quick Grievance</h3>
-            <p class="text-sm text-muted-foreground">Submit and track complaints with our efficient grievance redressal mechanism</p>
-          </div>
-        </div>
-      </div>
+    <div class="user-type-card">
+      <div class="user-icon"><svg width="30" height="30" stroke="#0e46d6" fill="none" stroke-width="2"><rect x="8" y="8" width="14" height="14" rx="3"/><line x1="11" y1="14" x2="19" y2="14"/><line x1="11" y1="18" x2="19" y2="18"/></svg></div>
+      <div class="user-type-title">Track Application</div>
+      <div class="user-type-desc">Check your application status and view detailed progress timeline</div>
+      <a href="/track" class="user-type-btn">Track Now</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- User Types Section -->
-  <section class="py-16 bg-accent">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Started</h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
-          Choose your role to access relevant features and services
-        </p>
-      </div>
-      <div class="user-type-grid">
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-rounded">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2336a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="32" width="32"><path d="M17 21v-2a4 4 0 0 0-3-3.87"/>
-                   <path d="M9 17a4 4 0 0 0-3 3v2"/>
-                   ircle cx="12" cy="7" r="="4"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl mb-3">For Beneficiaries</h3>
-            <p class="text-sm text-muted-foreground mb-6">Apply for relief, track applications, and receive direct benefit transfers</p>
-            <a href="/apply" class="button" style="width:100%;">Apply Now</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-rounded">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2336a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="32" width="32">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M3 9h18"/>
-                <path d="M9 21V9"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl mb-3">For Administrators</h3>
-            <p class="text-sm text-muted-foreground mb-6">Monitor cases, approve applications, and track fund utilization</p>
-            <a href="/dashboard" class="button" style="width:100%;">Admin Login</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="icon-rounded">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#2336a3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" height="32" width="32">
-                <rect x="3" y="3" width="18" height="18" rx="2"/>
-                <path d="M9 15h6"/>
-                <path d="M9 11h6"/>
-                <path d="M9 7h6"/>
-              </svg>
-            </div>
-            <h3 class="font-semibold text-xl mb-3">Track Application</h3>
-            <p class="text-sm text-muted-foreground mb-6">Check your application status and view detailed progress timeline</p>
-            <a href="/track" class="button" style="width:100%;">Track Now</a>
-          </div>
-        </div>
-      </div>
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-title">How It Works</div>
+  <div class="how-desc">Simple steps to receive your benefits</div>
+  <div class="how-steps">
+    <div class="how-step">
+      <div class="how-step-circle">1</div>
+      <div class="how-step-title">Register</div>
+      <div class="how-step-desc">Sign up with Aadhaar verification</div>
     </div>
-  </section>
+    <div class="how-step">
+      <div class="how-step-circle">2</div>
+      <div class="how-step-title">Apply</div>
+      <div class="how-step-desc">Submit required documents</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-circle">3</div>
+      <div class="how-step-title">Track</div>
+      <div class="how-step-desc">Monitor application status</div>
+    </div>
+    <div class="how-step">
+      <div class="how-step-circle">4</div>
+      <div class="how-step-title">Receive</div>
+      <div class="how-step-desc">Get direct bank transfer</div>
+    </div>
+  </div>
+</section>
 
-  <!-- How It Works -->
-  <section class="py-16">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
-        <p class="text-muted-foreground max-w-2xl mx-auto">
-          Simple steps to receive your benefits
-        </p>
-      </div>
-      <div class="steps-section">
-        <div class="steps-grid">
-          <div class="text-center">
-            <div class="step-circle">1</div>
-            <h3 class="font-semibold mb-2">Register</h3>
-            <p class="text-sm text-muted-foreground">Sign up with Aadhaar verification</p>
-          </div>
-          <div class="text-center">
-            <div class="step-circle">2</div>
-            <h3 class="font-semibold mb-2">Apply</h3>
-            <p class="text-sm text-muted-foreground">Submit required documents</p>
-          </div>
-          <div class="text-center">
-            <div class="step-circle">3</div>
-            <h3 class="font-semibold mb-2">Track</h3>
-            <p class="text-sm text-muted-foreground">Monitor application status</p>
-          </div>
-          <div class="text-center">
-            <div class="step-circle">4</div>
-            <h3 class="font-semibold mb-2">Receive</h3>
-            <p class="text-sm text-muted-foreground">Get direct bank transfer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-16 gradient-hero cta-section" style="margin-top:3rem;">
-    <div class="container">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Ready to Get Started?</h2>
-      <p class="text-lg mb-8 text-white/90" style="opacity:0.93;max-width:580px;margin:0 auto;">
-        Apply now for relief and incentives under PCR and PoA Acts. Our secure platform ensures 
-        timely and transparent benefit delivery.
-      </p>
-      <div style="display: flex; flex-direction:column; gap:1rem; max-width:370px;margin:0 auto;">
-        <a href="/apply" class="button hero" style="width:100%;">Start Application</a>
-        <a href="/support" class="button outline" style="width:100%;">Get Help</a>
-      </div>
-    </div>
-  </section>
+<!-- CTA FINAL SECTION -->
+<section class="cta-section text-center">
+  <div class="cta-title">Ready to Get Started?</div>
+  <p style="font-size:1.29rem; opacity:.93;max-width:580px;margin:0 auto 2.4rem;">Apply now for relief and incentives under PCR and PoA Acts. Our secure platform ensures timely and transparent benefit delivery.</p>
+  <div class="hero-actions" style="justify-content:center;">
+    <a href="/apply" class="get-started-btn">Start Application</a>
+    <a href="/support" class="get-started-btn secondary">Get Help</a>
+  </div>
+</section>
 </div>
 <footer>
   <div class="container">
@@ -312,10 +182,10 @@
       <div>
         <h3 class="footer-title">Quick Links</h3>
         <ul class="footer-list">
-          <li><a href="/apply">Apply for Relief</a></li>
-          <li><a href="/track">Track Application</a></li>
-          <li><a href="/grievance">File Grievance</a></li>
-          <li><a href="/support">Support & FAQ</a></li>
+          <li><a href="apply.html">Apply for Relief</a></li>
+          <li><a href="track.html">Track Application</a></li>
+          <li><a href="grievance.html">File Grievance</a></li>
+          <li><a href="support.html">Support & FAQ</a></li>
         </ul>
       </div>
 
